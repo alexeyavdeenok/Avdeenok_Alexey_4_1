@@ -57,17 +57,19 @@ public class Main {
     }
   }
 
-  //Метод получает ввод пользователя и возвращает строку
+  // Метод получает ввод пользователя и возвращает строку
   public static String inputString() {
     System.out.println("Введите строку: ");
     return input.nextLine();
   }
-  //Метод получает строку и возвращает слабый хэш
+
+  // Метод получает строку и возвращает слабый хэш
   public static int getWeakHash(String str) {
     WeakHash weak = new WeakHash();
     return weak.hash(str);
   }
-  //Метод получает строку и возвращает сильный хэш
+
+  // Метод получает строку и возвращает сильный хэш
   public static int getStrongHash(String str) {
     StrongHash strong = new StrongHash();
     return strong.hash(str);
