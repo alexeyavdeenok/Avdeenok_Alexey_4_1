@@ -16,8 +16,9 @@ public class Main {
       int choice = 0;
       if (input.hasNextInt()) {
         choice = input.nextInt();
+        input.nextLine();
       } else {
-        input.next();
+        input.skip(".*\n");
       }
       switch (choice) {
         case 1:
@@ -51,20 +52,22 @@ public class Main {
           break;
         default:
           System.out.println("Ошибка ввода");
+          break;
       }
     }
   }
 
+  //Метод получает ввод пользователя и возвращает строку
   public static String inputString() {
     System.out.println("Введите строку: ");
-    return input.next();
+    return input.nextLine();
   }
-
+  //Метод получает строку и возвращает слабый хэш
   public static int getWeakHash(String str) {
     WeakHash weak = new WeakHash();
     return weak.hash(str);
   }
-
+  //Метод получает строку и возвращает сильный хэш
   public static int getStrongHash(String str) {
     StrongHash strong = new StrongHash();
     return strong.hash(str);
